@@ -1,0 +1,109 @@
+package ruslan_7kd;
+
+import java.util.*;
+
+public class Matrix_Multiplication {
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        double[][] matrixOne = new double[3][3];
+
+        double[][] matrixTwo = new double[3][3];
+
+        System.out.print("Enter first matrix: ");
+
+        for (int i = 0; i < matrixOne.length; i++) {
+
+            for (int j = 0; j < matrixOne[i].length ; j++) {
+
+                matrixOne[i][j] = input.nextDouble();
+
+            }
+
+        }
+
+        System.out.print("Enter second matrix: ");
+
+        for (int i = 0; i < matrixTwo.length; i++) {
+
+            for (int j = 0; j < matrixTwo[i].length ; j++) {
+
+                matrixTwo[i][j] = input.nextDouble();
+
+            }
+
+        }
+
+        System.out.println("The matrices are added as follows ");
+
+        double[][] multiplied = addMatrix(matrixOne,matrixTwo);
+
+        for (int i = 0; i < multiplied.length; i++) {
+
+            System.out.println();
+
+            for (int j = 0; j < multiplied.length; j++) {
+
+                System.out.print(matrixOne[i][j]+" ");
+
+            }
+            if((i+1)%2==0)
+
+                System.out.print("    *    ");
+
+            else
+
+                System.out.print("         ");
+
+            for (int j = 0; j < multiplied.length; j++) {
+
+                System.out.print(matrixTwo[i][j]+" ");
+
+            }
+
+            if((i+1)%2==0 && i != 0)
+
+                System.out.print("    =    ");
+
+            else
+
+                System.out.print("         ");
+
+            for (int j = 0; j < multiplied.length; j++) {
+
+                System.out.printf("%4.1f  ",multiplied[i][j] );
+
+            }
+
+        }
+    }
+
+    public static double[][] addMatrix(double[][] a, double[][] b){
+
+        double[][] multiplied = new double[a.length][a.length];
+
+        for (int i = 0; i < a.length; i++) {
+
+            int j = 0;
+
+            for (j = 0; j < a.length; j++) {
+
+                double multipliedSum = 0;
+
+                for (int k = 0; k < a.length; k++) {
+
+                    multipliedSum += a[i][k] * b[k][j];
+
+                }
+                multiplied[i][j] = multipliedSum;
+
+            }
+        }
+
+        return multiplied;
+    }
+}
+//1 2 3 4 5 6 7 8 9
+//0 2 4 1 4.5 2.2 1.1 4.3 5.2
