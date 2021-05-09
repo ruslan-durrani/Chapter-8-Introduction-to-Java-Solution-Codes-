@@ -1,0 +1,47 @@
+package ruslan_7kd;
+
+import java.util.Scanner;
+
+public class WeeklyHOurEmployee_8_4 {
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        int[][] emplyeeHours = {{2,4,3,4,5,8,8},{7,3,4,3,3,4,4},
+
+                {3,3,4,3,3,2,2},
+
+                {9,3,4,7,3,4,1},
+
+                {3,5,4,3,6,3,8},
+
+                {3,4,4,6,3,4,4},
+
+                {3,7,4,8,3,8,4},
+
+                {6,3,5,9,2,7,9}};
+
+        String[] days = {"Sun","Mon","Tue","Wed","Thur","Fri","Sat"};
+
+        System.out.print("\t\t\t\t");
+
+        for (int i = days.length-1 ; i >=0 ; i--) {
+       
+            System.out.print(days[i]+ " \t ");
+
+        }
+
+        for (int i = emplyeeHours.length-1; i >= 0  ; i--) {
+
+            System.out.print("\nEmploye "+(i));
+
+            for (int j = emplyeeHours[i].length - 1; j >= 0; j--) {
+
+                System.out.print("\t\t"+emplyeeHours[i][j]);
+
+
+            }
+
+        }
+    }
+}
